@@ -1,0 +1,33 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --brand-primary: #0D2628;
+  --bg-primary: #F0EFEA;
+  --brand-hover: #184347;
+  --brand-accent: #2A9D8F;
+  --bg-surface: #FFFFFF;
+  --bg-muted: #E4E3DC;
+  --text-heading: #0D2628;
+  --text-body: #3A4D4E;
+  --border-subtle: #D5D4CC;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-primary);
+  color: var(--text-body);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Accessible focus outline */
+*:focus-visible {
+  outline: 2px solid var(--brand-accent);
+  outline-offset: 2px;
+}
