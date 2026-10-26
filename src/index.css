@@ -1,23 +1,82 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-lime: var(--lime);
+  --color-lime-foreground: var(--lime-foreground);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-ink-foreground: var(--ink-foreground);
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-serif: "Instrument Serif", Georgia, serif;
+}
 
 :root {
-  --brand-primary: #0D2628;
-  --bg-primary: #F0EFEA;
-  --brand-hover: #184347;
-  --brand-accent: #2A9D8F;
-  --bg-surface: #FFFFFF;
-  --bg-muted: #E4E3DC;
-  --text-heading: #0D2628;
-  --text-body: #3A4D4E;
-  --border-subtle: #D5D4CC;
-  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --radius: 0.625rem;
+  --lime: #5f7a58;
+  --lime-foreground: #ffffff;
+  --surface: #e8dfcc;
+  --ink: #343f35;
+  --ink-foreground: #fafaf5;
+  --background: #fafaf5;
+  --foreground: #343f35;
+  --card: #ffffff;
+  --card-foreground: #343f35;
+  --popover: #ffffff;
+  --popover-foreground: #1c241d;
+  --primary: #718b69;
+  --primary-foreground: #fafaf5;
+  --secondary: #f0ece1;
+  --secondary-foreground: #343f35;
+  --muted: #ede7d8;
+  --muted-foreground: #495348;
+  --accent: #e8dfcc;
+  --accent-foreground: #343f35;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #e8dfcc;
+  --input: #e8dfcc;
+  --ring: #718b69;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
 }
 
 html {
   scroll-behavior: smooth;
-  background-color: var(--bg-primary);
-  color: var(--text-body);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -26,8 +85,57 @@ html {
   }
 }
 
-/* Accessible focus outline */
 *:focus-visible {
-  outline: 2px solid var(--brand-accent);
+  outline: 2px solid var(--color-lime);
   outline-offset: 2px;
+}
+
+@utility font-serif-italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+}
+
+@utility btn-lime {
+  background-color: var(--color-lime);
+  color: var(--color-lime-foreground);
+  transition:
+    transform 0.15s ease,
+    filter 0.15s ease,
+    box-shadow 0.15s ease;
+  &:hover {
+    filter: brightness(0.95);
+    transform: translateY(-1px);
+  }
+  &:active {
+    filter: brightness(0.9);
+    transform: translateY(0);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 2px;
+  }
+}
+
+@utility bg-placeholder-pattern {
+  background-color: var(--color-surface);
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent 0 12px,
+    rgba(0, 0, 0, 0.03) 12px 24px
+  );
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@utility animate-fade-up {
+  animation: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
 }

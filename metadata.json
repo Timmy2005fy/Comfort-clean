@@ -1,6 +1,6 @@
 {
-  "name": "Comfort Clean",
-  "description": "Professional move-in, move-out, deep, and student room cleaning service serving Ibogun, Ifo, and Lagos.",
+  "name": "",
+  "description": "",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

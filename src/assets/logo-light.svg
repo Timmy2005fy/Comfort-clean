@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 250" fill="none">
+  <!-- House Roof in Gold -->
+  <path
+    d="M132 65 L180 25 L228 65"
+    fill="none"
+    stroke="#E5A83B"
+    stroke-width="8"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <!-- House Base in Crisp White -->
+  <path
+    d="M144 63 V105 C144 111 149 116 155 116 H205 C211 116 216 111 216 105 V63"
+    fill="none"
+    stroke="#FFFFFF"
+    stroke-width="7"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <!-- 4-pointed Sparkle Star in Gold -->
+  <path
+    d="M180 72 C180 81 183 88 196 88 C183 88 180 95 180 104 C180 95 177 88 164 88 C177 88 180 81 180 72 Z"
+    fill="#E5A83B"
+  />
+  <!-- Brand Name in Crisp White -->
+  <text
+    x="180"
+    y="168"
+    text-anchor="middle"
+    font-family="'Instrument Serif', Georgia, serif"
+    font-size="42"
+    font-weight="700"
+    fill="#FFFFFF"
+  >Comfort Clean</text>
+  <!-- Brand Tagline in Gold -->
+  <text
+    x="180"
+    y="200"
+    text-anchor="middle"
+    font-family="'Plus Jakarta Sans', system-ui, sans-serif"
+    font-size="13.5"
+    font-weight="600"
+    letter-spacing="0.6"
+    fill="#E5A83B"
+  >We keep it clean for your comfort</text>
+</svg>
