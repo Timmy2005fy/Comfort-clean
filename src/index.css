@@ -116,15 +116,6 @@ html {
   }
 }
 
-@utility bg-placeholder-pattern {
-  background-color: var(--color-surface);
-  background-image: repeating-linear-gradient(
-    45deg,
-    transparent 0 12px,
-    rgba(0, 0, 0, 0.03) 12px 24px
-  );
-}
-
 @keyframes fade-up {
   from {
     opacity: 0;

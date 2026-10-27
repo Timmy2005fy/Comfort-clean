@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type FormEvent } from "react";
+import { useRef, useState, type FormEvent } from "react";
 import {
   Phone,
   MapPin,
@@ -41,7 +41,6 @@ interface ServiceCardData {
   id: string;
   title: ServiceType;
   description: string;
-  imageLabel: string;
 }
 
 const SERVICES_LIST: ServiceCardData[] = [
@@ -50,28 +49,24 @@ const SERVICES_LIST: ServiceCardData[] = [
     title: "Move-in cleaning",
     description:
       "Complete top-to-bottom sanitization so your new home is pristine, clean, and ready on day one.",
-    imageLabel: "Move-in Cleaning Photo Placeholder",
   },
   {
     id: "move-out",
     title: "Move-out cleaning",
     description:
       "Thorough cleaning designed to satisfy move-out inspections and leave the space spotless.",
-    imageLabel: "Move-out Cleaning Photo Placeholder",
   },
   {
     id: "deep",
     title: "Deep cleaning",
     description:
       "Intense scrub of kitchens, bathrooms, floors, and corners that standard cleaning misses.",
-    imageLabel: "Deep Cleaning Photo Placeholder",
   },
   {
     id: "student",
     title: "Student room cleaning",
     description:
       "Fast, reliable, and affordable room cleaning tailored specifically for student hostels and rooms.",
-    imageLabel: "Student Room Photo Placeholder",
   },
 ];
 
@@ -202,7 +197,6 @@ function BeforeAfter() {
 }
 
 export default function App() {
-  const heroRef = useRef<HTMLElement>(null);
   const [formData, setFormData] = useState<FormState>({
     name: "",
     service: "Move-in cleaning",
@@ -383,10 +377,7 @@ export default function App() {
 
       <main className="flex-1">
         {/* Hero */}
-        <section
-          ref={heroRef}
-          className="pt-12 sm:pt-16 pb-16 px-4 sm:px-6 lg:px-8 bg-background border-b border-border"
-        >
+        <section className="pt-12 sm:pt-16 pb-16 px-4 sm:px-6 lg:px-8 bg-background border-b border-border">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <h1 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-ink leading-[1.12]">
               Come home to a space that feels brand new.

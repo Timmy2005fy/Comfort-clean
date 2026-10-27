@@ -182,14 +182,6 @@ html {
     transform: translateY(-1px);
   }
 }
-@utility bg-placeholder-pattern {
-  background-color: var(--color-surface);
-  background-image: repeating-linear-gradient(
-    45deg,
-    transparent 0 12px,
-    oklch(0 0 0 / 3%) 12px 24px
-  );
-}
 
 @keyframes fade-up {
   from {
